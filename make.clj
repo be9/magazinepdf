@@ -61,7 +61,7 @@
 (defn process-page [page size]
   (if-let [png (:png page)]
     (let [resized-png (resize-png png size)
-          result-path (str "tmp/composed_" (:id page) ".png")]
+          result-path (str "tmp/composed_" (:id page) ".jpg")]
       (compose resized-png (:jpeg page) result-path)
       result-path)
     (:jpeg page)))
